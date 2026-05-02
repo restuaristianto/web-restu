@@ -4,6 +4,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil Interaktif</title>
   <style>
+  /* Style untuk Pop-up Custom */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: muncul 0.3s ease-out;
+}
+
+@keyframes muncul {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-box h3 { color: #2e7d32; margin-bottom: 10px; }
+.modal-box p { color: #555; font-size: 14px; margin-bottom: 20px; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -144,6 +175,14 @@ footer {
   animation: muncul 0.4s ease;
   box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
+@keyframes muncul {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-box h3 { color: #2e7d32; margin-bottom: 10px; }
+.modal-box p { color: #555; font-size: 14px; margin-bottom: 20px; }
+
 
 @keyframes muncul {
   from {
@@ -291,20 +330,39 @@ button:hover {
 </section>
 
 <section>
-  <p>apa pendapatmu tentang web saya</p>
-<input type="text" 
-       placeholder="Ketik di sini..." 
-       style="width: 170px; 
-              height: 50px; 
-              background-color: white; 
-              color: black; 
-              font-size: 18px; 
-              font-weight: bold; 
-              padding-left: 15px; 
-              border: 2px solid #2e7d32; 
-              border-radius: 20px;">
-               <button class= "btn" onclick="bukaPopup()"> kirim </button>
+    <p>apa pendapatmu tentang web saya</p>
+    <input type="text" id="inputPendapat" placeholder="Ketik di sini..." 
+        style="width: 80%; max-width: 300px; height: 45px; border-radius: 25px; border: 2px solid #2e7d32; padding-left: 15px; outline: none;">
+    <br><br>
+    <button class="btn" onclick="kirimPesan()">kirim</button>
 </section>
+
+<div id="customAlert" class="modal-overlay">
+    <div class="modal-box">
+        <h3>✅ Berhasil!</h3>
+        <p>Terima kasih banyak atas masukannya, ya!</p>
+        <button onclick="tutupPopup()" style="background: #2e7d32; color: white; border: none; padding: 10px 25px; border-radius: 15px; cursor: pointer;">Oke</button>
+        <script>
+function kirimPesan() {
+    var input = document.getElementById("inputPendapat").value;
+    if (input.trim() === "") {
+        alert("Isi dulu dong pendapatnya");
+    } else {
+        // Tampilkan pop-up custom
+        document.getElementById("customAlert").style.display = "flex";
+        // Kosongkan input
+        document.getElementById("inputPendapat").value = "";
+    }
+}
+
+function tutupPopup() {
+    document.getElementById("customAlert").style.display = "none";
+}
+</script>
+</section>
+    </div>
+</div>
+
   </div>
 </body>
   </html>
