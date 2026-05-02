@@ -323,11 +323,31 @@ button:hover {
 </section>
 
 <section>
-  <h2>kontak saya</h2>
-  <li>📱 no telp: +62-9809-8107</li>
-  <li>✉️ gmail: restuaristianto@gmail.com</li>
-  <li>📍 lokasi: depok</li>
+    <h2>kontak saya</h2>
+    <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;">
+            <a href="https://wa.me/6281398098107" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" width="20" alt="WA">
+                WhatsApp: +62 813-9809-8107
+            </a>
+        </li>
+
+        <li style="margin-bottom: 10px;">
+            <a href="mailto:restuaristianto@gmail.com" style="text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="20" alt="Email">
+                Email: restuaristianto@gmail.com
+            </a>
+        </li>
+
+        <li style="margin-bottom: 10px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Depok" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/1865/1865269.png" width="20" alt="Maps">
+                Lokasi: Depok, Jawa Barat
+            </a>
+        </li>
+    </ul>
 </section>
+
 
 <section>
     <p>apa pendapatmu tentang web saya</p>
@@ -346,7 +366,7 @@ button:hover {
 function kirimPesan() {
     var input = document.getElementById("inputPendapat").value;
     if (input.trim() === "") {
-        alert("Isi dulu dong pendapatnya");
+        alert("Isi dulu dong pendapatnya.. 😊");
     } else {
         // Tampilkan pop-up custom
         document.getElementById("customAlert").style.display = "flex";
