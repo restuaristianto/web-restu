@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Interaktif</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      scroll-behavior: smooth;
+    }.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 25px;
+  margin-top: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.profile {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #38bdf8;
+}
+
+h1, h2 {
+  color: #38bdf8;
+}
+
+button {
+  margin-top: 20px;
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #0ea5e9;
+  color: white;
+}
+
+section {
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+li {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+li:hover {
+  transform: translateX(10px);
+  color: #7dd3fc;
+}
+
+ul {
+  line-height: 2;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.card {
+  animation: fadeInUp 1s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+section {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+section:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.profile {
+  animation: pulse 2.5s infinite;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile:hover {
+  transform: rotate(8deg) scale(1.08);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <img src="aku.jpg" alt="Foto Profil" class="profile">
+      <h1>Restu Aristianto</h1>
+      <p>Calon Web Developer 🚀</p>
+      <a href="#about">
+        <button>Lihat Data Diri</button>
+      </a>
+    </div><section id="about">
+  <h2>Data Diri</h2>
+  <ul>
+    <li><strong>Nama:</strong> Restu Aristianto</li>
+    <li><strong>Tempat Tinggal:</strong> Indonesia</li>
+    <li><strong>Pendidikan:</strong> Lulusan SMK</li>
+    <li><strong>Jurusan:</strong> Rekayasa Perangkat Lunak</li>
+    <li><strong>Cita-cita:</strong> Web Developer & IT Professional</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Keahlian</h2>
+  <ul>
+    <li>HTML & CSS</li>
+    <li>JavaScript Dasar</li>
+    <li>Microsoft Office</li>
+    <li>Editing Video & Desain</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Prestasi</h2>
+  <ul>
+    <li>🏆 Top 1 Nilai Uji Kompetensi Keahlian</li>
+    <li>🥉 Juara 3 Lomba Cerdas Cermat Sanlat Ramadhan</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Sertifikat</h2>
+  <p>berikut serifikat yang saya peroleh:</p>
+  <div class= "certificate"></div>
+  <img src= "sertifikat.jpg" alt="sertifikat"/>
+</section>
+
+  </div>
+</body>
+</html>
