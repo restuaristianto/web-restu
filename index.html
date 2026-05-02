@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      background: linear-gradient(135deg, #000000, #1e3a8a);
       color: white;
       scroll-behavior: smooth;
     }.container {
@@ -88,6 +88,83 @@ ul {
   }
 }
 
+certificate {
+  margin-top: 15px;
+}
+
+.certificate img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+}
+    }.btn {
+  padding: 15px 35px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  background: white;
+  color: #6b46c1;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.z-index:1000);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: linear-gradient(135deg, #FF0000, #1e3a8a);
+  position: absolute;
+  top: 50%;
+  left: 50%:
+  transform: translate(-50%, -50%)
+  padding: 20px;
+  border-radius: 30px;
+  text-align: center;
+  width: 300px;
+  animation: muncul 0.4s ease;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close-btn {
+  margin-top: 20px;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 10px;
+  background: #6b46c1;
+  color: white;
+  cursor: pointer;
+}
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
@@ -132,6 +209,11 @@ button:hover {
   box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
 }
 
+.btn:hover {
+  transform: translate(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+}
+
   </style>
 </head>
 <body>
@@ -168,17 +250,61 @@ button:hover {
   <h2>Prestasi</h2>
   <ul>
     <li>🏆 Top 1 Nilai Uji Kompetensi Keahlian</li>
-    <li>🥉 Juara 3 Lomba Cerdas Cermat Sanlat Ramadhan</li>
-  </ul>
+    <button class= "btn" onclick="bukaPopup()"> lihat data </button>
+    <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>prestasi ku</h2>
+      <h3>aku berhasil meraih nilai tertinggi pada ukom yaitu untuk internal aku mendapatkan nilai 97 dan eksternal 96,5</h3>
+      <button class="close-btn" onclick="tutupPopup()">Tutup</button>
+
+
+  </div>  <script>
+    function bukaPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function tutupPopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const popup = document.getElementById('popup');
+      if (event.target === popup) {
+        popup.style.display = 'none';
+      }
+    }
+  </script></body>
 </section>
 
 <section>
   <h2>Sertifikat</h2>
   <p>berikut serifikat yang saya peroleh:</p>
-  <div class= "certificate"></div>
-  <img src= "sertifikat.jpg" alt="sertifikat"/>
+  <div class="certificate">
+  <img src="sertifikat.jpg" alt="sertifikat"/>
 </section>
 
+<section>
+  <h2>kontak saya</h2>
+  <li>📱 no telp: +62-9809-8107</li>
+  <li>✉️ gmail: restuaristianto@gmail.com</li>
+  <li>📍 lokasi: depok</li>
+</section>
+
+<section>
+  <p>apa pendapatmu tentang web saya</p>
+<input type="text" 
+       placeholder="Ketik di sini..." 
+       style="width: 170px; 
+              height: 50px; 
+              background-color: white; 
+              color: black; 
+              font-size: 18px; 
+              font-weight: bold; 
+              padding-left: 15px; 
+              border: 2px solid #2e7d32; 
+              border-radius: 20px;">
+               <button class= "btn" onclick="bukaPopup()"> kirim </button>
+</section>
   </div>
 </body>
-</html>
+  </html>
